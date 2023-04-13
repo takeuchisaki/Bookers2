@@ -8,8 +8,7 @@
         <tbody>
           <tr></tr>
           <tr>
-            <th>name</th>
-            <th><%= @user.name %></th>
+           
           </tr>
           <tr>
             <th>introduction</th>
@@ -18,7 +17,7 @@
         </tbody>
       </table>
       <div class="row">
-        <%= link_to "編集", edit_user_path(@user) %>
+    
       </div>
       
       
@@ -30,6 +29,7 @@
           <%= f.text_area :body %>
           <%= f.submit 'Create Book' %>
       <% end %>
+      
       
     </div>
     <div class="col-md-8 offset-md-1">
