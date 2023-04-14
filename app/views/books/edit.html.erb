@@ -1,1 +1,20 @@
-
+ <div class="container">
+   <div class="row">
+     <div class="col-sm 12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+       <h1>Editing Book</h2>
+          <%= form_with model: @book do |f| %>
+           <div class="form-gruup">
+            <label for="book_title">Title</label><br>
+             <%= f.text_field :title %>
+           </div>
+           <div class="form-gruup">
+            <label for="book_opinion">Opinion</label><br>
+             <%= f.text_area :body %>
+           </div>
+           <div class="form-gruup">
+             <%= f.submit 'Create Book' %>
+           </div>
+          <% end %>
+          <span><%= link_to 'Show', book_path(@book) %></span>
+          <span>|</span>
+          <span><%= link_to 'Back', books_path %></span>
