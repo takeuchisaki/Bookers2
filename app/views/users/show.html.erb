@@ -1,7 +1,4 @@
 <div>
-  <%= flash[:notice] %>
-</div>
-<div>
   <% if @book.errors.any? %>
    <%= @book.errors.count %>errors prohibited this obj from being saved:
     <ul>
@@ -32,7 +29,7 @@
         </tbody>
       </table>
       <div class="row">
-       <%= link_to "編集", edit_user_path(@user) %>
+       <%= link_to "編集", edit_user_path(current_user) %>
       </div>
 
 
