@@ -1,3 +1,7 @@
+<div>
+  <%= flash[:notice] %>
+</div>
+
 <div class="container px-5 px-sm-0">
   <div class="row">
     <div class="col-md-3">
@@ -19,9 +23,9 @@
       </table>
       <div class="row">
         <%if @user == current_user.id %>
-         <p><%= link_to "編集", edit_user_path(@user) %></p>
+         <%= link_to "編集", edit_user_path(@user) %>
          <% else %>
-         <p><%= link_to "編集", user_path(@user) %></p>
+         <%= link_to "編集", user_path(@user) %>
         <% end %>
       </div>
 
