@@ -6,8 +6,8 @@
       <h2>User info</h2>
       <%= render 'users/ulist', user: @user %>
       <div class="row">
-       <%= link_to user_path(current_user), class:"btn btn-outline-secondary btn-block edit_user_96628" do  %>
-        <span><i class="fas fa-user-cog"></i></span>
+       <%= link_to edit_user_path(@book.user), class:"btn btn-outline-secondary btn-block edit_user_96628" do  %>
+         <span><i class="fas fa-user-cog"></i></span>
        <% end %>
       </div>
 
@@ -17,7 +17,7 @@
 
 
     <div class="col-md-8 offset-md-1">
-      <h2>Books detail</h2>
+      <h2>Book detail</h2>
       <table class="table">
         <tbody>
            <tr>
