@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+.text-light{
+  text-decoration: none;
+  color: white ; 
+}

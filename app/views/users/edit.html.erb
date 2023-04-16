@@ -17,16 +17,16 @@
           <label for="user_name">Name</label><br>
           <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"name" %>
         </div>
-        <div class="form_group">
+        <div class="form-group">
           <label for="user_image">Image</label><br>
           <%= f.file_field :profile_image, placeholder: "Image", cccept: "image/*" %>
         </div>
-        <div class="form_group">
+        <div class="form-group">
           <label for="user_intraduction">Introduction</label><br>
           <%= f.text_area :introduction %>
         </div>
-        <div class="form_group">
-          <%= f.submit "Update User" %>
+        <div class="form-group">
+          <%= f.submit "Update User", class:"btn btn-secondary" %>
         </div>
       <% end %>
     </div>

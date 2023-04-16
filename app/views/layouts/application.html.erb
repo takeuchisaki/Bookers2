@@ -21,38 +21,51 @@
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
-        
+
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto navbar-dark">
             <% if user_signed_in? %>
-              <li class="nav-item">
-                <li clss="fa-solid fa-house-chimney"></i>
-                <%= link_to "Home", user_path(current_user) %>
+              <li>
+                <%= link_to user_path(current_user), class:"nav-link text-light" do %>
+                  <span><i class="fas fa-home"></i> Home</span>
+                <% end %>
               </li>
-              <li class="nav-item">
-                <i class="fa-solid fa-users"></i>
-                <%= link_to "Users", users_path %>
+              <li>
+                <%= link_to users_path, class:"nav-link text-light" do %>
+                  <span><i class="fa-solid fa-users"></i> Users</span>
+                <% end %>
               </li>
-              <li class="nav-item">
-                <i class="fa-solid fa-book-open"></i>
-                <%= link_to "Books", books_path %>
+              <li>
+                <%= link_to books_path, class:"nav-link text-light" do %>
+                  <span><i class="fa-solid fa-book-open"></i> Books</span>
+                <% end %>
               </li>
-              <li class="nav-item">
-                <i class="fa-solid fa-right-from-bracket"></i>
-                <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete, class:"nav-link text-light" do %>
+                  <span><i class="fa-solid fa-right-from-bracket"></i> Log out</span>
+                <% end %>
               </li>
             <% else %>
-              <li class="nav-item">
-                <%= link_to "Home", root_path %>
+              <li>
+                <%= link_to root_path, class:"nav-link text-light" do %>
+                  <span><i class="fas fa-home"></i> Home</span>
+                <% end %>
               </li>
-              <li class="nav-item">
-                <%= link_to "About", about_path %>
+
+              <li>
+                <%= link_to about_path, class:"nav-link text-light" do %>
+                  <span><i class="fas fa-link"></i> About</span>
+                <% end %>
               </li>
-              <li class="nav-item">
-                <%= link_to "Sign up", new_user_registration_path %>
+              <li>
+                <%= link_to new_user_registration_path, class:"nav-link text-light" do %>
+                  <span><i class="fas fa-user-plus"></i> Sign up</span>
+                <% end %>
               </li>
-              <li class="nav-item">
-                <%= link_to "Log in", new_user_session_path %>
+              <li>
+                <%= link_to new_user_session_path, class:"nav-link text-light" do %>
+                  <span><i class="fas fa-sign-in-alt"></i> Log in</span>
+                <% end %>
               </li>
             <% end %>
             </ul>
@@ -65,7 +78,7 @@
       <% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "#{key}") %>
       <% end %>
-      
+
      <p id="notice"></p>
 
     </main>
