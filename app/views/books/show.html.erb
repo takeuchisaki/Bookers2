@@ -6,7 +6,7 @@
       <h2>User info</h2>
       <%= render 'users/ulist', user: @user %>
       <div class="row">
-       <%= link_to edit_user_path(current_user), class:"btn btn-outline-secondary btn-block edit_user_96628" do  %>
+       <%= link_to user_path(current_user), class:"btn btn-outline-secondary btn-block edit_user_96628" do  %>
         <span><i class="fas fa-user-cog"></i></span>
        <% end %>
       </div>
@@ -35,12 +35,12 @@
              </td>
              <td>
                <% if @book.user == current_user %>
-                <%= link_to 'Edit', edit_book_path(@book) %>
+                <%= link_to 'Edit', edit_book_path(@book), class:"btn btn-sm btn-success edit_book_73452" %>
                <% end %>
              </td>
              <td>
                <% if @book.user == current_user %>
-                <%= link_to 'Destroy', book_path(@book), method: :delete %>
+                <%= link_to 'Destroy', book_path(@book), method: :delete,"data-confirm" => "本当に削除しますか？", class:"btn btn-sm btn-danger destroy_book_73452" %>
                <% end %>
              </td>
            </tr>
