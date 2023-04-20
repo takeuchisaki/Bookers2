@@ -1,8 +1,6 @@
-
 <div class="container px-5 px-sm-0">
   <div class="row">
     <div class="col-md-3">
-
       <h2>User info</h2>
       <%= render 'users/ulist', user: @user %>
       <div class="row">
@@ -10,12 +8,9 @@
          <span><i class="fas fa-user-cog"></i></span>
        <% end %>
       </div>
-
       <h2 class="mt-3">New book</h2>
       <%= render 'users/nlist', book: @bookw %>
     </div>
-
-
     <div class="col-md-8 offset-md-1">
       <h2>Book detail</h2>
       <table class="table">
@@ -33,6 +28,19 @@
              <td>
                <%= @book.body %>
              </td>
+             <% if @book.favorited_by?(current_user) %>
+              <td>
+                <%= link_to book_favorites_path(@book), method: :delete do %>
+                  ♥<%= @book.favorites.count %>
+                <% end %>
+              </td>
+            <% else %>
+              <td>
+                <%= link_to book_favorites_path(@book), method: :post do %>
+                  ♡<%= @book.favorites.count %>
+                <% end %>
+              </td>
+            <% end %>
              <td>
                <% if @book.user == current_user %>
                 <%= link_to 'Edit', edit_book_path(@book), class:"btn btn-sm btn-success edit_book_73452" %>
