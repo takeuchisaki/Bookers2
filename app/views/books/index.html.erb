@@ -5,12 +5,7 @@
   <div class="row">
     <div class="col-md-3">
       <h2>User info</h2>
-      <%= render 'users/ulist', user: @user %>
-      <div class="row">
-       <%= link_to edit_user_path(current_user), class:"btn btn-outline-secondary btn-block edit_user_96628" do  %>
-        <span><i class="fas fa-user-cog"></i></span>
-       <% end %>
-      </div>
+      <%= render 'users/ulist', user: current_user %>
       <h2 class="mt-3">New book</h2>
       <%= render 'users/nlist', book: @book %>
     </div>

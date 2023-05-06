@@ -3,11 +3,6 @@
     <div class="col-md-3">
       <h2>User info</h2>
       <%= render 'users/ulist', user: @user %>
-      <div class="row">
-       <%= link_to edit_user_path(@book.user), class:"btn btn-outline-secondary btn-block edit_user_96628" do  %>
-         <span><i class="fas fa-user-cog"></i></span>
-       <% end %>
-      </div>
       <h2 class="mt-3">New book</h2>
       <%= render 'users/nlist', book: @bookw %>
     </div>
@@ -28,19 +23,9 @@
              <td>
                <%= @book.body %>
              </td>
-             <% if @book.favorited_by?(current_user) %>
-              <td>
-                <%= link_to book_favorites_path(@book), method: :delete do %>
-                  ♥<%= @book.favorites.count %>
-                <% end %>
-              </td>
-            <% else %>
-              <td>
-                <%= link_to book_favorites_path(@book), method: :post do %>
-                  ♡<%= @book.favorites.count %>
-                <% end %>
-              </td>
-            <% end %>
+             <td>
+               <%= render 'favorites/favorite', book: @book %>
+             </td>
              <td>
                コメント：<%= @book.book_comments.count %>
              </td>
@@ -81,7 +66,7 @@
       </table>
       <div>
         <%= form_with model: [@book, @book_comment] do |f| %>
-         <%= f.text_area :comment, style: "width:100%", rows: "4" %><br>
+         <%= f.text_area :comment, style: "width:100%", rows: "5" %><br>
          <%= f.submit "送信" %>
         <% end %>
       </div>
